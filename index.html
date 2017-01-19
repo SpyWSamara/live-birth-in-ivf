@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Вероятность рождения живого ребенка в результате ЭКО</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container theme-showcase" role="main">
+      <div class="page-header">
+        <h1>Прогнозирование завершения индуцированной в результате ЭКО беременности родами живым плодом</h1>
+      </div>
+      <div class="row">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title">Введите данные</h3>
+          </div>
+          <div class="panel-body">
+            <fieldset class="form-horizontal" role="form" id="calcForm">
+              <div class="form-group">
+                <label for="coefA" class="col-sm-6 control-label">Число полученных эмбрионов хорошего и отличного качества:</label>
+                <div class="col-sm-6">
+                  <input type="number" class="form-control" id="coefA" name="coefA" min="1" value="1">
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label class="col-sm-6 control-label">Наличие полиморфизма генов системы гемостаза у пациентки:</label>
+                <div class="col-sm-6">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="coefB" id="coefBYes" value="1" checked="">
+                      Да
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="coefB" id="coefBNo" value="0">
+                      Нет
+                    </label>
+                  </div>
+                  <p class="help-block">выберите верное</p>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="col-sm-6 control-label">Наличие совпадения 2 и более локусов системы HLA у супругов</label>
+                <div class="col-sm-6">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="coefC" id="coefCYes" value="1" checked="">
+                      Да
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="coefC" id="coefCNo" value="0">
+                      Нет
+                    </label>
+                  </div>
+                  <p class="help-block">выберите верное</p>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="col-sm-6 control-label">Момент переноса эмбрионов в полость матки:</label>
+                <div class="col-sm-6">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="coefD" id="coefD2day" value="1" checked="">
+                      2е сутки
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="coefD" id="coefD3day" value="2">
+                      3е сутки
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="coefD" id="coefD5day" value="3">
+                      5е сутки
+                    </label>
+                  </div>
+                  <p class="help-block">выберите верное</p>
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <button type="button" class="btn btn-lg btn-success" id="startCalc">Рассчитать</button>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="alert alert-success hidden" role="alert" id="resultInfo">
+          <p><b>Результат</b>: вероятность рождения живого ребенка в результате данной попытки ЭКО  составляет <b id="resultValue">____</b> (область возможных значений от 0 до 1, коэффициент конкордантности прогностического алгоритма 70,1%)</p>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
